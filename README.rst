@@ -8,13 +8,14 @@ Synthesizing Tasks
 :College: CUNY School of Professional Studies
 :Course-Name: Software Application Programming I
 :Course-Code: IS 210
-:Points: ##
+:Points: 10
 :Due-Date: YYYY-MM-DDTHH:mm:ss
 
 Overview
 ========
 
-[overview]
+In this brief assignment, we'll be using the scope identifier to conditionally
+execute code on running the file.
 
 Instructions
 ============
@@ -41,24 +42,62 @@ files that you create!
 Synthesizing Tasks
 ==================
 
-Task ##
+Task 01
 -------
 
-[description of task]
+In this task you'll be using the datetime module to create a function that
+returns today's date and also conditionally executes that date if it's run
+on the command line.
 
 Specifications
 ^^^^^^^^^^^^^^
 
-[step-by-step directions of the task]
+1.  Create a new module named ``task_01.py``
+
+2.  Import the ``datetime`` module
+
+3.  Create a new constant named ``CURDATE`` and assign it a value of
+    ``None``
+
+4.  Create a new function named ``get_current_date()`` that doesn't take
+    any parameters
+
+    1.  This function should use ``datetime.date.today()`` to return the
+        current day as a ``date`` object.
+
+        .. note::
+
+            You can just return that function's output directly. No additional
+            processing is needed. We'll cover objects in the future.
+
+5.  Use the scope identification conditional block to identify if this code is
+    being run from an imported module or directly on the command line.
+
+    1.  If the module is being run directly on the command line, use your
+        ``get_current_date()`` function to assign ``CURDATE`` the value of
+        today's date and print ``CURDATE`` to the command line.
+
+.. warning::
+
+    This task does not have 100% unit test coverage. You will have to get the
+    scope portion correct on your own.
 
 Examples
 ^^^^^^^^
-
-[examples of the work in-progress]
-
 .. code:: pycon
 
-    >>>
+    >>> import task_01
+    >>> task_01.CURDATE
+    None
+    >>> task_01.get_current_date()
+    datetime.date(2015, 1, 1)
+
+.. code:: console
+
+    $ python -i task_01.py
+    2015-01-01
+    >>> CURDATE
+    datetime.date(2015, 1, 1)
 
 Executing Tests
 ===============
@@ -128,3 +167,81 @@ credit.
 
 .. _GitHub: https://github.com/
 .. _Python String Documentation: https://docs.python.org/2/library/stdtypes.html
+Task 05: \*args and \*\*kwargs
+==============================
+
+Finally, for this lesson, we'll be using the magic arguments in a function.
+
+Specifications
+^^^^^^^^^^^^^^
+
+#.  Create a module named ``task_05``
+
+#.  In ``task_05``, create a function named ``mass_multiplier()``
+
+    #.  ``mass_multiplier()`` should accept any number of positional (indexed)
+        arguments
+
+    #.  It returns the multiplication result of all arguments
+
+#.  In ``task_05``, create a function named ``student_report()``
+
+    #.  ``student_report()`` should take 3, required, keyword arguments:
+
+        #.  ``name``
+
+        #.  ``age``
+
+        #.  ``school_id``
+
+    #.  ``student_report()`` may also take additional, magic, keyword
+        arguments.
+
+    #.  All arguments should be included in a single dictionary keyed by the
+        argument name.
+
+    #.  Return the created dictionary.
+
+Examples
+^^^^^^^^
+
+.. code:: pycon
+
+    >>> mass_multiplier(1, 2)
+    2
+
+    >>> mass_multiplier(1, 2, 3, 6, 98, 0)
+    0
+
+    >>> student_report(name='Jane', age=13, school_id='ps-1')
+    {'name': 'Jane', 'age': 3, 'school_id': 'ps-1')
+
+    >>> student_report(name='Jane', age=13, school_id='ps-1', math='B')
+    {'name': 'Jane', 'age': 3, 'school_id': 'ps-1', 'math'=B)
+
+Submission
+==========
+
+Code should be submitted to `GitHub`_ by means of opening a pull request.
+
+As-of Lesson 02, each student will have a branch named after his or her
+`GitHub`_ username. Pull requests should be made against the branch that
+matches your `GitHub`_ username. Pull requests made against other branches will
+be closed.  This work flow mimics the steps you took to open a pull request
+against the ``pull`` branch in Lesson 01.
+
+For a refresher on how to open a pull request, please see homework instructions
+in Lesson 01. It is recommended that you run PyLint locally after each file
+is edited in order to reduce the number of errors found in testing.
+
+In order to receive full credit you must complete the assignment as-instructed
+and without any violations (reported in the build status). There will be
+automated tests for this assignment to provide early feedback on program code.
+
+When you have completed this assignment, please post the link to your
+pull request in the body of the assignment on Blackboard in order to receive
+credit.
+
+.. _GitHub: https://github.com/
+.. _Python String Documentation: https://docs.python.org/2/library/stdtypes.html
+.. _Unix Timestamp: https://en.wikipedia.org/wiki/Unix_time
