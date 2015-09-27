@@ -85,7 +85,7 @@ Examples
 .. code:: pycon
 
     >>> import task_01
-    >>> task_01.CURDATE
+    >>> print task_01.CURDATE
     None
     >>> task_01.get_current_date()
     datetime.date(2015, 1, 1)
