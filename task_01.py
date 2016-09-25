@@ -7,5 +7,4 @@ import datetime
 CURDATE = None
 
 def get_current_date():
-    
-     return datetime.date.today()
+    return datetime.date.today()
